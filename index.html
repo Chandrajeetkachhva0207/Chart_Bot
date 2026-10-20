@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMSY | AI Chart BOT (The Official Guide)</title>
+    <meta name="description" content="SAMSY AI Chart BOT - The Official Guide. Explore causal asset webs, 33-year cycle market anomalies, quantum predictive chart cones, and the Tannhaus AI Oracle.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-cycle="cycle-2">
+
+    <!-- Atmospheric Overlays -->
+    <div class="bg-backdrop"></div>
+    <div class="bg-vignette"></div>
+    <div class="film-grain"></div>
+
+    <div id="app-container">
+
+        <!-- ====================================================================
+             TOP CINEMATIC HEADER (SAMSY Official Guide)
+             ==================================================================== -->
+        <header class="app-header">
+            <div class="header-left">
+                <!-- SVG Triquetra Knot Logo -->
+                <svg class="triquetra-logo" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                    <!-- Outer rotating trinity arcs -->
+                    <circle cx="50" cy="50" r="42" stroke="var(--accent-glow)" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+                    <path d="M50 15 C 65 35, 75 60, 50 85 C 25 60, 35 35, 50 15 Z" stroke="var(--accent-glow)" stroke-width="2" />
+                    <path d="M15 65 C 35 75, 60 65, 85 50 C 60 25, 35 35, 15 65 Z" stroke="var(--accent-glow)" stroke-width="2" />
+                    <path d="M85 65 C 65 75, 40 65, 15 50 C 40 25, 65 35, 85 65 Z" stroke="var(--accent-glow)" stroke-width="2" />
+                    <circle cx="50" cy="50" r="14" stroke="var(--accent-glow)" stroke-width="1.8" />
+                    <circle cx="50" cy="50" r="3" fill="var(--accent-glow)" />
+                </svg>
+
+                <div class="brand-text">
+                    <h1 class="brand-title">
+                        SAMSY <span class="tag">AI CHART BOT</span>
+                    </h1>
+                    <span class="brand-motto">Sic Mundus Creatus Est // Das Ende ist der Anfang</span>
+                </div>
+            </div>
+
+            <!-- Central Nav Tabs: WHO / WHAT / WHEN -->
+            <nav class="header-nav" aria-label="Main Navigation">
+                <button class="nav-tab-btn active" data-tab="who" id="nav-btn-who">
+                    <span>WHO</span> <small style="opacity: 0.6; font-size: 9px;">[ENTITIES]</small>
+                </button>
+                <button class="nav-tab-btn" data-tab="what" id="nav-btn-what">
+                    <span>WHAT</span> <small style="opacity: 0.6; font-size: 9px;">[CHARTS]</small>
+                </button>
+                <button class="nav-tab-btn" data-tab="when" id="nav-btn-when">
+                    <span>WHEN</span> <small style="opacity: 0.6; font-size: 9px;">[33-YR CYCLE]</small>
+                </button>
+            </nav>
+
+            <!-- Header Right Controls -->
+            <div class="header-right">
+                <!-- Cycle Switcher -->
+                <div class="cycle-selector-wrapper">
+                    <select id="cycle-selector" class="cycle-select" aria-label="Timeline Cycle Selector">
+                        <option value="cycle-1">CYCLE I : 1986 (Genesis)</option>
+                        <option value="cycle-2" selected>CYCLE II : 2019 (Neural Nexus)</option>
+                        <option value="cycle-3">CYCLE III : 2052 (Paradox Singularity)</option>
+                        <option value="origin">ORIGIN WORLD (Equilibrium)</option>
+                    </select>
+                </div>
+
+                <div class="anomaly-pill" id="header-anomaly-count">33 ANOMALIES ACTIVE</div>
+
+                <!-- Web Audio Drone Ambient Sound Toggle -->
+                <button class="audio-btn" id="audio-toggle-btn" title="Toggle Atmospheric Drone [M]">
+                    <span class="audio-wave"></span>
+                    <span class="audio-label">SOUND: MUTED</span>
+                </button>
+
+                <!-- Oracle CTA -->
+                <button class="oracle-btn" id="oracle-toggle-btn">
+                    <span>⚡ SAMSY ORACLE</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- ====================================================================
+             MAIN CONTENT VIEWS
+             ==================================================================== -->
+        <main id="content-views">
+
+            <!-- VIEW 1: WHO (The Causal Network Graph) -->
+            <section class="view-panel active" id="view-who" aria-label="Entity Relationship Network">
+                <div class="network-hud">
+                    <div class="network-search-box">
+                        <span class="search-icon">⚲</span>
+                        <input type="text" id="network-search-input" placeholder="Search node or ticker (BTC, NVDA, GOLD)..." autocomplete="off" />
+                    </div>
+
+                    <div class="cluster-legend">
+                        <div class="legend-title">DYNASTIES // CLUSTERS</div>
+                        <div class="legend-items">
+                            <div class="legend-item"><span class="symbol">Ω</span> Kahnwald (Cryptographic Roots)</div>
+                            <div class="legend-item"><span class="symbol">⚡</span> Nielsen (AI Tensor Compute)</div>
+                            <div class="legend-item"><span class="symbol">☿</span> Doppler (Macro Sovereign Reserve)</div>
+                            <div class="legend-item"><span class="symbol">☢</span> Tiedemann (Nuclear Volatility Loops)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="network-container">
+                    <canvas id="network-canvas"></canvas>
+                </div>
+
+                <div class="network-controls-bottom">
+                    <button class="hud-btn" id="reset-graph-btn">RESET VIEW</button>
+                    <span class="nav-tip">Drag to Pan // Wheel to Zoom // Click Node for Dossier</span>
+                </div>
+            </section>
+
+            <!-- VIEW 2: WHAT (Quantum Technical Chart Studio) -->
+            <section class="view-panel" id="view-what" aria-label="Technical Analysis Studio">
+                <div class="chart-studio-toolbar">
+                    <div class="toolbar-left">
+                        <select id="chart-asset-select" class="chart-asset-select" aria-label="Select Asset">
+                            <option value="btc">BTC / USD (Bitcoin Monolith)</option>
+                            <option value="eth">ETH / USD (Ethereum State Machine)</option>
+                            <option value="nvda">NVDA / USD (NVIDIA Compute Core)</option>
+                            <option value="gold">XAU / USD (Gold Origin Anchor)</option>
+                            <option value="wndn">WNDN / URAN (Winden Nuclear Reserve)</option>
+                        </select>
+
+                        <div class="timeframe-group">
+                            <button class="tf-btn" data-tf="15m">15M</button>
+                            <button class="tf-btn" data-tf="1H">1H</button>
+                            <button class="tf-btn active" data-tf="1D">1D</button>
+                            <button class="tf-btn" data-tf="33Y">33-YEAR</button>
+                        </div>
+                    </div>
+
+                    <div class="toolbar-right">
+                        <div class="indicator-checkbox-group">
+                            <label class="indicator-label">
+                                <input type="checkbox" id="toggle-causal-bands" checked />
+                                <span>Tannhaus Causal Bands</span>
+                            </label>
+                            <label class="indicator-label">
+                                <input type="checkbox" id="toggle-prediction-cone" checked />
+                                <span>2052 Prediction Cone</span>
+                            </label>
+                            <label class="indicator-label">
+                                <input type="checkbox" id="toggle-oscillator" checked />
+                                <span>Triquetra 33-Oscillator</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="chart-canvas-container">
+                    <canvas id="chart-canvas"></canvas>
+                </div>
+            </section>
+
+            <!-- VIEW 3: WHEN (The 33-Year Cycle Scrubber) -->
+            <section class="view-panel" id="view-when" aria-label="33-Year Cycle Timeline">
+                <div class="timeline-hero">
+                    <h2>THE 33-YEAR RESONANCE</h2>
+                    <p>“EVERYTHING IS CONNECTED. PAST, PRESENT, AND FUTURE ARE BOUND IN A CIRCLE.”</p>
+                </div>
+
+                <div class="timeline-dial-wrapper">
+                    <div class="timeline-year-readout" id="timeline-year-display">2019</div>
+                    <input type="range" id="timeline-scrubber" class="timeline-slider" min="1953" max="2052" value="2019" step="1" />
+                    <div class="timeline-ticks">
+                        <span>1953 (Genesis)</span>
+                        <span>1986 (Cycle I)</span>
+                        <span>2019 (Cycle II)</span>
+                        <span>2052 (Cycle III)</span>
+                    </div>
+                </div>
+
+                <div class="timeline-events-track" id="timeline-events-track">
+                    <!-- Event cards dynamically rendered by timeline.js -->
+                </div>
+            </section>
+
+        </main>
+
+        <!-- ====================================================================
+             ENTITY DOSSIER DRAWER (Side Drawer for Selected Node)
+             ==================================================================== -->
+        <aside class="entity-dossier-modal" id="entity-dossier" aria-label="Entity Dossier">
+            <div class="dossier-header">
+                <div class="dossier-title-group">
+                    <h2 id="dossier-title">BITCOIN / USD</h2>
+                    <div class="dossier-symbol" id="dossier-symbol">BTC // ORIGIN: 2009</div>
+                </div>
+                <button class="close-btn" id="dossier-close-btn" title="Close Dossier [Esc]">&times;</button>
+            </div>
+
+            <div class="dossier-body">
+                <div class="dossier-price-strip">
+                    <div class="price" id="dossier-price">$91,420.00</div>
+                    <div class="change" id="dossier-change">+5.33%</div>
+                </div>
+
+                <div class="dossier-section">
+                    <span class="section-label">OVERVIEW & CAUSAL SIGNIFICANCE</span>
+                    <p class="dossier-summary-text" id="dossier-summary"></p>
+                </div>
+
+                <div class="dossier-section">
+                    <span class="section-label">PARADOX METRICS</span>
+                    <div class="metric-grid">
+                        <div class="metric-card">
+                            <span class="label">PARADOX RISK</span>
+                            <span class="val" id="dossier-risk">CRITICAL (Level IV)</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="label">CYCLE RESONANCE</span>
+                            <span class="val" id="dossier-resonance">33-Month Harmonic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dossier-section">
+                    <span class="section-label">STATUS ACROSS 33-YEAR CYCLES</span>
+                    <div class="cycle-status-list">
+                        <div class="cycle-status-item">
+                            <span class="c-label">CYCLE I (1986)</span>
+                            <span class="c-text" id="status-c1"></span>
+                        </div>
+                        <div class="cycle-status-item">
+                            <span class="c-label">CYCLE II (2019)</span>
+                            <span class="c-text" id="status-c2"></span>
+                        </div>
+                        <div class="cycle-status-item">
+                            <span class="c-label">CYCLE III (2052)</span>
+                            <span class="c-text" id="status-c3"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dossier-section">
+                    <span class="section-label">ENTANGLED CAUSAL TIES</span>
+                    <div class="dossier-tag-list" id="dossier-ties">
+                        <!-- Clickable connection tags rendered dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="dossier-actions">
+                <button class="action-btn-primary" id="dossier-load-chart-btn">LOAD FULL CHART</button>
+                <button class="action-btn-secondary" id="dossier-ask-oracle-btn">ASK ORACLE</button>
+            </div>
+        </aside>
+
+        <!-- ====================================================================
+             TANNHAUS AI ORACLE CHATBOT (Sliding Terminal)
+             ==================================================================== -->
+        <aside id="chat-drawer" aria-label="Tannhaus AI Oracle Chat Terminal">
+            <div class="chat-drawer-header">
+                <div class="chat-header-title">
+                    <h3>SAMSY // TANNHAUS ORACLE</h3>
+                    <span>NEURAL PARADOX PREDICTOR & CHART ENGINE</span>
+                </div>
+                <button class="close-btn" id="chat-close-btn">&times;</button>
+            </div>
+
+            <!-- Quick Action Chips -->
+            <div class="chat-chips-container" id="chat-chips">
+                <!-- Prompt chips generated dynamically -->
+            </div>
+
+            <!-- Messages Stream -->
+            <div id="chat-messages">
+                <!-- Messages stream with typewriter effects -->
+            </div>
+
+            <!-- Input Bar -->
+            <div class="chat-input-bar">
+                <input type="text" id="chat-input" placeholder="Ask Tannhaus Oracle about cycles, paradoxes, BTC, NVDA..." autocomplete="off" />
+                <button class="chat-send-btn" id="chat-send-btn">TRANSMIT</button>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Application Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/network.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/timeline.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
